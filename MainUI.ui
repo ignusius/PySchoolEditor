@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>651</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form1</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QsciScintilla" name="editor">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="whatsThis">
+         <string/>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QFrame" name="find_bar">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>26</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="find_field">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>231</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="button_find">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>0</y>
+         <width>61</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Найти</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="case_cmbox">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>0</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Учитывать регистр</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>651</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="action_new"/>
+    <addaction name="action_open"/>
+    <addaction name="action_save"/>
+    <addaction name="action_save_as"/>
+    <addaction name="action_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Правка</string>
+    </property>
+    <addaction name="action_back"/>
+    <addaction name="action_redo"/>
+    <addaction name="action_сut"/>
+    <addaction name="action_copy"/>
+    <addaction name="action_paste"/>
+    <addaction name="action_find"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Вид</string>
+    </property>
+    <addaction name="action_zoom_in"/>
+    <addaction name="action_zoom_out"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Выполнить</string>
+    </property>
+    <addaction name="action_run"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>Помощь</string>
+    </property>
+    <addaction name="action_site"/>
+    <addaction name="action_about"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::NoToolBarArea</set>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_new"/>
+   <addaction name="action_open"/>
+   <addaction name="action_save"/>
+   <addaction name="action_back"/>
+   <addaction name="action_redo"/>
+   <addaction name="action_сut"/>
+   <addaction name="action_copy"/>
+   <addaction name="action_paste"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="MaintoolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="windowTitle">
+    <string>MainToolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_find"/>
+   <addaction name="action_zoom_in"/>
+   <addaction name="action_zoom_out"/>
+   <addaction name="action_run"/>
+  </widget>
+  <action name="action_new">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/document-new.png</normaloff>:/images/images/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Новый файл</string>
+   </property>
+   <property name="toolTip">
+    <string>Новый файл</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="action_open">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/document-open.png</normaloff>:/images/images/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Открыть файл</string>
+   </property>
+   <property name="toolTip">
+    <string>Открыть файл</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/filesave.png</normaloff>:/images/images/filesave.png</iconset>
+   </property>
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+   <property name="toolTip">
+    <string>Сохранить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_back">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/back.png</normaloff>:/images/images/back.png</iconset>
+   </property>
+   <property name="text">
+    <string>Отменить</string>
+   </property>
+   <property name="toolTip">
+    <string>Отменить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="action_redo">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/forward.png</normaloff>:/images/images/forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Вернуть</string>
+   </property>
+   <property name="toolTip">
+    <string>Вернуть</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
+   </property>
+  </action>
+  <action name="action_сut">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/editcut.png</normaloff>:/images/images/editcut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Вырезать</string>
+   </property>
+   <property name="toolTip">
+    <string>Вырезать</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="action_copy">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/edit-copy.png</normaloff>:/images/images/edit-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Копировать</string>
+   </property>
+   <property name="toolTip">
+    <string>Копировать</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="action_paste">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/edit-paste.png</normaloff>:/images/images/edit-paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Вставить</string>
+   </property>
+   <property name="toolTip">
+    <string>Вставить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="action_site">
+   <property name="text">
+    <string>Сайт сообщества</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="action_zoom_in">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/zoom-in.png</normaloff>:/images/images/zoom-in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Увеличить текст</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="action_zoom_out">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/zoom-out.png</normaloff>:/images/images/zoom-out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Уменьшить текст</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/application-exit.png</normaloff>:/images/images/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_save_as">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/document-save-as.png</normaloff>:/images/images/document-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Сохранить как</string>
+   </property>
+   <property name="toolTip">
+    <string>Сохранить как</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="action_run">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/run.png</normaloff>:/images/images/run.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выполнить</string>
+   </property>
+   <property name="toolTip">
+    <string>Выполнить</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="action_find">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/edit-find.png</normaloff>:/images/images/edit-find.png</iconset>
+   </property>
+   <property name="text">
+    <string>Поиск</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QsciScintilla</class>
+   <extends>QFrame</extends>
+   <header>Qsci/qsciscintilla.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>action_open</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_save</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_save_as</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>save_as()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_new</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>new()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_back</sender>
+   <signal>triggered()</signal>
+   <receiver>editor</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_redo</sender>
+   <signal>triggered()</signal>
+   <receiver>editor</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_сut</sender>
+   <signal>triggered()</signal>
+   <receiver>editor</receiver>
+   <slot>cut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_copy</sender>
+   <signal>triggered()</signal>
+   <receiver>editor</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_paste</sender>
+   <signal>triggered()</signal>
+   <receiver>editor</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_zoom_in</sender>
+   <signal>triggered()</signal>
+   <receiver>editor</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_zoom_out</sender>
+   <signal>triggered()</signal>
+   <receiver>editor</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>app_quit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_site</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>app_site()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_about</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>app_about()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>editor</sender>
+   <signal>textChanged()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>text_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_find</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>find_bar_show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_find</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>find_text()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_run</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>run()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>313</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>open()</slot>
+  <slot>save()</slot>
+  <slot>save_as()</slot>
+  <slot>new()</slot>
+  <slot>app_quit()</slot>
+  <slot>app_site()</slot>
+  <slot>app_about()</slot>
+  <slot>text_changed()</slot>
+  <slot>run()</slot>
+  <slot>find_bar_show()</slot>
+  <slot>find_text()</slot>
+ </slots>
+</ui>
